@@ -1,9 +1,29 @@
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
-// @mixin  grayText{
-//     font-family: 'Montserrat', sans-serif;
-//     color: #b6bfce;
-// }
-.tmp{
-    color: red ;
+@mixin  grayText{
+    font-family: 'Montserrat', sans-serif;
+    color: #b6bfce;
+}
+.pageTop{
+    @include grayText;
+}
+#MyClockDisplay,#tempNow
+{
+    font: {
+        size: 60px;
+        weight: bold;
+    }
+
+}
+#day{
+    font-size: 30px;
+}
+#month{
+    font-size: 24px;
+}
+#date{
+    margin-top: 20px;
+}
+#wicon{
+    width: 100% ;
 }

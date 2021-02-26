@@ -32,14 +32,14 @@ gulp.task ( "html", function () {
 //об'єднання, компіляція Sass в CSS, додавання префіксів і подальша мінімізація коду
 gulp.task ( "scss", function () {
     return gulp.src('app/sass/**/*.scss')
-         .pipe (concat ( 'styles.scss'))
+         //.pipe (concat ( 'styles.scss'))
         .pipe (sass())
-        .pipe (autoprefixer ({
-            browsers: [ 'last 2 versions'],
-            cascade: false
-         }))
-        .pipe (cssnano ())
-        .pipe (rename ({suffix: '.min'}))
+        // .pipe (autoprefixer ({
+        //     browsers: [ 'last 2 versions'],
+        //     cascade: false
+        //  }))
+       // .pipe (cssnano ())
+       // .pipe (rename ({suffix: '.min'}))
         .pipe(gulp.dest('app/css'))
 });
 // gulp.task( 'sass', function() {
@@ -50,7 +50,7 @@ gulp.task ( "scss", function () {
 
 //об'єднання і стиснення JS-файлів
 gulp.task ( "scripts", function () {
-    return gulp.src ( "app / js / *. js") //вихідна директорія файлів
+    return gulp.src ( "app / js /**/ *. js") //вихідна директорія файлів
         .pipe (concat ( 'scripts.js')) // конкатенація js-файлів в один
         .pipe (uglify ()) //стиснення коду
         .pipe (rename ({suffix: '.min'})) //перейменування файлу з
@@ -76,7 +76,7 @@ gulp.task('js-watch', function (done) {
 gulp.task ( "watch", function () {
     gulp.watch ( "app / *. html", gulp.series( "html"));
     gulp.watch ( "app / js / *. js", gulp.series( "scripts"));
-    gulp.watch ( "app / sass / *. scss", gulp.series( "scss"));
+    gulp.watch ( "app/sass/**/*.scss", gulp.series( "scss"));
     gulp.watch ( "app / images /*.+ (jpg | jpeg | png | gif)", gulp.series("imgs"));
    
 });
@@ -84,5 +84,5 @@ gulp.task ( "watch", function () {
 //Запуск тасків за замовчуванням
 //gulp.task ("default", gulp.series('browserSync'));
 gulp.task('default', gulp.series(
-    gulp.parallel('watch', 'browserSync') 
+    gulp.parallel('watch', 'browserSync','scss') 
 ));

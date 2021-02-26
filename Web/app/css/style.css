@@ -1,2 +1,20 @@
-.tmp {
-  color: red; }
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+.pageTop {
+  font-family: 'Montserrat', sans-serif;
+  color: #b6bfce; }
+
+#MyClockDisplay, #tempNow {
+  font-size: 60px;
+  font-weight: bold; }
+
+#day {
+  font-size: 30px; }
+
+#month {
+  font-size: 24px; }
+
+#date {
+  margin-top: 20px; }
+
+#wicon {
+  width: 100%; }
