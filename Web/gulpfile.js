@@ -2,7 +2,7 @@
 var gulp = require ("gulp");
 var browserSync=require("browser-sync").create();
 //додаткові плагіни Gulp
-var sass = require ("gulp-sass"), //конвертує SASS в CSS
+var scss = require ("gulp-sass"), //конвертує SASS в CSS
     cssnano = require ("gulp-cssnano"), //мінімізація CSS
     autoprefixer = require ('gulp-autoprefixer'), //додавання префіксів в
                                                   //CSS для підтримки 
@@ -30,10 +30,10 @@ gulp.task ( "html", function () {
 });
 
 //об'єднання, компіляція Sass в CSS, додавання префіксів і подальша мінімізація коду
-gulp.task ( "sass", function () {
-    return gulp.src ( "app / sass / *. sass")
-        .pipe (concat ( 'styles.sass'))
-        .pipe (sass ())
+gulp.task ( "scss", function () {
+    return gulp.src ( "app / scss / *. scss")
+        .pipe (concat ( 'styles.scss'))
+        .pipe (scss ())
         .pipe (autoprefixer ({
             browsers: [ 'last 2 versions'],
             cascade: false
@@ -71,7 +71,7 @@ gulp.task('js-watch', function (done) {
 gulp.task ( "watch", function () {
     gulp.watch ( "app / *. html", gulp.series( "html"));
     gulp.watch ( "app / js / *. js", gulp.series( "scripts"));
-    gulp.watch ( "app / sass / *. sass", gulp.series( "sass"));
+    gulp.watch ( "app / scss / *. scss", gulp.series( "scss"));
     gulp.watch ( "app / images /*.+ (jpg | jpeg | png | gif)", gulp.series("imgs"));
    
 });
