@@ -18,20 +18,20 @@ gulp.task ('hello', function (done) {
 });
 gulp.task('browserSync',function(){
     browserSync.init({
-        server:{
-            baseDir:'app'
-        },
+        watch:true,
+        server:'app'
+        
     })
 })
 //копіювання HTML файлів в папку dist
 gulp.task ( "html", function () {
-    return gulp.src ( "src / *. html")
+    return gulp.src ( "app/ *. html")
     .pipe (gulp.dest ( "dist"));
 });
 
 //об'єднання, компіляція Sass в CSS, додавання префіксів і подальша мінімізація коду
 gulp.task ( "sass", function () {
-    return gulp.src ( "src / sass / *. sass")
+    return gulp.src ( "app / sass / *. sass")
         .pipe (concat ( 'styles.sass'))
         .pipe (sass ())
         .pipe (autoprefixer ({
@@ -55,7 +55,7 @@ gulp.task ( "scripts", function () {
 
 //cтискання зображень
 gulp.task ( 'imgs', function () {
-    return gulp.src ( "src / images /*.+ (jpg | jpeg | png | gif)")
+    return gulp.src ( "app / images /*.+ (jpg | jpeg | png | gif)")
         .pipe (imagemin ({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
@@ -63,14 +63,21 @@ gulp.task ( 'imgs', function () {
         }))
         .pipe (gulp.dest ( "dist / images"))
 });
-
+gulp.task('js-watch', function (done) {
+    browserSync.reload();
+    done();
+});
 //відстежування за змінами у файлах
-gulp.task ( "watch", gulp.series('browserSync'),function () {
-    gulp.watch ( "src / *. html", gulp.series( "html"));
-    gulp.watch ( "src / js / *. js", gulp.series( "scripts"));
-    gulp.watch ( "src / sass / *. sass", gulp.series( "sass"));
-    gulp.watch ( "src / images /*.+ (jpg | jpeg | png | gif)", gulp.series("imgs"));
+gulp.task ( "watch", function () {
+    gulp.watch ( "app / *. html", gulp.series( "html"));
+    gulp.watch ( "app / js / *. js", gulp.series( "scripts"));
+    gulp.watch ( "app / sass / *. sass", gulp.series( "sass"));
+    gulp.watch ( "app / images /*.+ (jpg | jpeg | png | gif)", gulp.series("imgs"));
+   
 });
 
 //Запуск тасків за замовчуванням
-gulp.task ("default", gulp.series('browserSync'));
+//gulp.task ("default", gulp.series('browserSync'));
+gulp.task('default', gulp.series(
+    gulp.parallel('watch', 'browserSync') 
+));
