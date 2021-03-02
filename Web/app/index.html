@@ -6,67 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <!-- <link rel="stylesheet/less" type="text/css" href="dist/components/dropdown.css"> -->
    
 </head>
 <body>
-    
-    <div class="ui two column doubling stackable grid container pageTop">
-        <div class="column">
-           
-            <div class="ui  left aligned container  ">
-                <div class="ui two column doubling stackable grid container">
-                
-                    <div class="column">
-                        <div  class="ui  right aligned container  ">
-                        <p id="MyClockDisplay" class="clock" onload="showTime()"  > </p>
-                  </div>
-                    </div>
-                    <div class="column">
-                        
-                       <p id="date" >
-                            <span id="day" ></span>
-                            <br>
-                            <span id="month" ></span>
-                        </p>
-                    </div>
-                
-                
-              
-             </div>
-         </div>
-        </div>
-        <div class="column">
-                <div class="ui two column doubling stackable grid container">
-                  <div class="column">
-                    
-                </div>
-                <div class="column">
-                    <div class="ui two column doubling stackable grid container">
-                        <div class="column">
-                          <div  class="ui  right aligned container  ">
-                            <img id="wicon"  src="" alt="Weather icon" >
-                          </div>
-                      </div>
-                      <div class="column">
-                          <div class="ui  right aligned container  " >
-                             <p  id="tempNow"></p>
-                            </div>
-                      </div>
-                    </div>
-                      </div>
-                </div>
-              </div>
-           
-        </div>
-      
+      <div class="containert pageTop pRelative">
+        <img id="shapeTop" src="img/Shape 1.png" class="fLeft">
+        <span id="MyClockDisplay" class="clock fLeft m-30" onload="showTime()"  > </span>
+        <span id="date" class="fLeft">
+            <span id="day" ></span>
+            <br>
+            <span id="month" ></span>
+        </span>       
+        <span  id="tempNow" class="fRight m-30"></span>
+        <span  class="fRight">
+          <img id="wicon"  src="" alt="Weather icon" >
+        </span>  
       </div>
-    <div class="ui container">
-   
+  
+    <div class="containert pRelative">
+      <span class="fLeft">
+<img src="img/icon.png">
+<span class="titleLarge"> Gas usage</span>
+<span><img class="fRight mr-1" src="img/Shape 6.png"></span>
+<div class="ui compact selection dropdown fRight  rBlue-45 mr-1">
+  <i class="dropdown icon "></i>
+  <div class="text">Select</div>
+  <div class="menu ">
+    <div class="item">Today</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+  </div>
+</div>
+<canvas id="myChart" height="400" width="600"></canvas>
+<!-- <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto">
+</div> -->
+<!-- <div  style="width: 600px;height: 400px;margin: 0px auto">
+  <div class="container">
+    <canvas id="myChart"></canvas>
+</div>
+</div> -->
+</span>
+
+      
+      <span class="fRight">
+        <img src="img/Vector Smart Object.png"><span class="titleLarge"> Electric usage</span>
+        <img class="fRight mr-1" src="img/Shape 6.png">
+
+ <div class="ui compact selection dropdown fRight  rBlue-45 mr-1">
+  <i class="dropdown icon "></i>
+  <div class="text">Select</div>
+  <div class="menu ">
+    <div class="item">Today</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+  </div>
+</div>
+<p>kmkmkmkmkmkkkkkkkkkkkmkmkmkmkmkmkhhhhhhhhhhhhhhhhhhhhhhh</p>
+      </span>
  </div> 
+ <!-- <div class="ui two column doubling stackable grid container">
+  <div class="column m-3">
+<img src="img/icon.png">
+<span class="titleLarge"> Gas usage</span>
+<span><img class="fRight mr-1" src="img/Shape 6.png"></span>
+<div class="ui compact selection dropdown fRight  rBlue-45 mr-1">
+<i class="dropdown icon "></i>
+<div class="text">Select</div>
+<div class="menu ">
+<div class="item">Monthly</div>
+<div class="item">B</div>
+<div class="item">C</div>
+</div>
+
+</div>
+
+  </div>
+  <div class="column">
+    <img src="img/Vector Smart Object.png"><span class="titleLarge"> Electric usage</span>
+    <img class="fRight mr-1" src="img/Shape 6.png">
+
+<div class="ui compact selection dropdown fRight  rBlue-45 mr-1">
+<i class="dropdown icon "></i>
+<div class="text">Select</div>
+<div class="menu ">
+<div class="item">Today</div>
+<div class="item">B</div>
+<div class="item">C</div>
+</div>
+</div>
+
+  </div>
+</div>  -->
    
-       <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+       <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+      <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+     
+      <script src="semantic/dist/semantic.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+     
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
       <script src="js/script.js"></script>
+       <script src="js/Chart.js"></script> 
 </body>
 </html>
