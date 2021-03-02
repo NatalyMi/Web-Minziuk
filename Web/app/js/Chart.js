@@ -17,19 +17,37 @@ function renderChart(data, labels) {
             labels: labels,
             datasets: [{
                 showLine: true ,
-                label: '',
+                label: 'litre',
                 data: data,
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
             },
-        {  label: '',
+        {  label: '$',
             data: [0,77, 76, 309, 40, 50,477,58,49,265,58,432],
             borderColor: 'rgba(75, 0, 192, 1)',
                 backgroundColor: 'rgba(75, 19, 192, 0.2)'
         }]
         },
         options: { 
+            legend: {
+                display: false,
+               
+                // labels: {
+                //     fontColor: 'rgb(255, 99, 132)'
+                // }
+            },
             tooltips: {
+                displayColors: false,
+                backgroundColor: 'rgba(255,255,255,1)',
+                bodyFontColor:'rgba(0,0,0,1)',
+                callbacks: {
+                    // afterBody: function(tooltipItem, chart) {
+                    // return {
+                    //     borderColor: 'rgb(255, 0, 0)',
+                    //     backgroundColor: 'rgb(255, 0, 0)'
+                    // };
+                },
+                //displayColors:true,
                // mode: 'nearest',
                intersect:false,
                 mode: 'index',
