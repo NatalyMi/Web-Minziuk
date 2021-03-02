@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 body {
   margin: 0% !important;
-  padding: 0% !important; }
+  padding: 0% !important;
+  background-color: #ebf6fa !important; }
 
 .pageTop {
   font-family: 'Montserrat', sans-serif;
@@ -14,19 +15,23 @@ body {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .containert {
-    width: calc(933px + 2rem) !important; } }
+    margin-left: 20px !important;
+    margin-right: 20px !important; } }
 
 @media only screen and (min-width: 1200px) {
   .containert {
-    width: calc(1127px + 2rem) !important; } }
+    margin-left: 50px !important;
+    margin-right: 50px !important; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .containert {
-    width: calc(723px + 2rem) !important; } }
+    margin-left: 10px !important;
+    margin-right: 10px !important; } }
 
-.containert {
-  margin-left: auto !important;
-  margin-right: auto !important; }
+.white {
+  background-color: #ffffff;
+  padding: 3px;
+  border-radius: 10px; }
 
 .m-30 {
   margin: 30px; }
@@ -69,8 +74,58 @@ body {
   border-style: solid;
   border-width: 1px; }
 
+.p-2 {
+  padding: 1rem; }
+
 .mr-1 {
   margin-right: 1rem; }
 
+.ml-2 {
+  margin-left: 2rem; }
+
+.ml-1 {
+  margin-left: 1rem; }
+
 .pRelative {
   position: relative; }
+
+.rad {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none; }
+
+.rad > input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+.Gas {
+  height: 40px; }
+
+.rad > i {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: 0.2s;
+  box-shadow: inset 0 0 0 8px #fff;
+  border: 1px solid gray;
+  background: gray; }
+
+.rad:hover > i {
+  box-shadow: inset 0 0 0 3px #fff;
+  background: gray; }
+
+.G > input:checked + i {
+  box-shadow: inset 0 0 0 3px #fff;
+  background: #4aceb7; }
+
+.B > input:checked + i {
+  box-shadow: inset 0 0 0 3px #fff;
+  background: #4bc2e3; }
+
+.fas {
+  color: #a9e2f4 !important; }

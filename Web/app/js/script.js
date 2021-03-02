@@ -10,7 +10,34 @@ window.onload=function(){
     setTimeout(clock, 1000);
     
     $('.ui.dropdown').dropdown();
-   
+    data = [0,54, 200, 300, 400, 500,77,5,4,265,5,85];
+    labels =  ["Ja", "Fe", "Ma", "Ap", "Ma", "Ju", "Ji","Au","Se", "Oc", "No", "De"];
+    renderChart(data, labels);
+
+    $('#rG1').click(function(){
+      
+      if ($(this).attr( "checked" )){
+       
+        this.checked = false;
+
+        $(this).removeAttr('checked');
+      } else {
+        $(this).attr('checked', true)
+        this.checked = true;
+      }
+    });
+    $('#rB1').click(function(){
+      
+      if ($(this).attr( "checked" )){
+       
+        this.checked = false;
+
+        $(this).removeAttr('checked');
+      } else {
+        $(this).attr('checked', true)
+        this.checked = true;
+      }
+    });
   
 f();
 
