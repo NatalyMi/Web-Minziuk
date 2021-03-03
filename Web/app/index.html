@@ -27,7 +27,7 @@
       </div>
   
     <div class="containert pRelative">
-      <span class="fLeft white  p-2">
+      <span class="fLeft white-p">
         <div class="Gas pRelative"> 
 
           <img src="img/icon.png">
@@ -43,7 +43,7 @@
             </div>
           </div>
         </div>
-        <div class="Gas pRelative"> 
+        <!-- <div class="Gas pRelative"> 
       <span class="mr-1 ml-2">
           <label class="rad G">
             <input id="rG1" type="radio" name="frequency" checked="checked"   >
@@ -58,17 +58,17 @@
            </label>  
       Target amount
     </span>
+        </div> -->
+
+        <div class="Gas  fInfo" > 
+          <span class="mr-1 ml-2 fLeft pRelative"><img class="fLeft mr-1" src="img/Shape 7.png"><span class="mr-1">Monthly</span><span id="litre" >41.6 litre</span></span>
+          <span class="mr-1 ml-2 fRight pRelative"> <span><img class="fLeft mr-1" src="img/Shape 8.png"></span><span>Total</span><span id="price" class=" ml-1">111$</span></span>
         </div>
 
-        <div class="Gas pRelative"> 
 
-          
-          <span class="mr-1 ml-2 fLeft"><img class="fLeft mr-1" src="img/Shape 7.png"><span class="mr-1">Monthly</span><span >41.6 litre</span></span>
-          <span class="mr-1 ml-2 fRight"> <span><img class="fLeft mr-1" src="img/Shape 8.png"></span><span>Total</span><span class=" ml-1">111$</span></span>
-        </div>
-
-
-<canvas id="myChart" height="365" width="570" ></canvas>
+<!-- <canvas id="myChart" height="365" width="570" ></canvas> -->
+<div id="chart" style="height: 365px; width: 570px;">
+</div>
 <!-- <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto">
 </div> -->
 <!-- <div  style="width: 600px;height: 400px;margin: 0px auto">
@@ -141,6 +141,8 @@
      
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
       <!-- <script src="https://kit.fontawesome.com/ba3e669e60.js" crossorigin="anonymous"></script> -->
+      <script type="text/javascript" src="canvasjs.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
       <script src="js/script.js"></script>
        <script src="js/Chart.js"></script> 
 </body>

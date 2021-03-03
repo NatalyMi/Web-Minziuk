@@ -1,11 +1,121 @@
+var currency="$";
 // window.onload=function(){
+   
+    var options = {
+        
+        
+        chart: {
+            toolbar: {
+                show: false,
+            },
+          type: 'area',
+          zoom: {
+            enabled: false
+          },
+          
+        },
+        grid: {
+            show: true,
+            borderColor: '#e5f3f7',
+            strokeDashArray: 0,
+            position: 'back',
+            xaxis: {
+                lines: {
+                    show: true
+                }
+            },   
+           
+           
+        },
+        legend: {
+            position: 'top',
+            horizontalAlign: 'left',
+            offsetY: -35,
+            offsetX: 22,
+            fontSize: '14px',
+            fontFamily: 'Helvetica, Arial',
+            fontWeight: 400,
+            labels: {
+                colors: '#9da8bc',
+               
+            },
+            
+          },
+        dataLabels: {
+            enabled: false,
+          },
+        series: [{
+          name: 'Current usage',
+          data: [5,54, 200, 300, 400, 450,77,5,4,265,5,85]},
+          {
+            name: 'Target amount',
+            data: [11, 32, 45, 32, 34, 52, 41,5,54, 200, 300, 400]
+          
+         
+        }],
+        stroke: {
+            curve: 'straight'
+          },
+          subtitle: {
+            text: `.`,
+            align: 'left',
+            margin: 10,
+            offsetX: 20,
+            offsetY: 30,
+            floating: false,
+            style: {
+              fontSize:  '12px',
+              fontWeight:  'normal',
+              fontFamily:  undefined,
+              color:  '#fff'
+            },
+        },
+        
+        xaxis: {
+            axisBorder: {
+                show: true,
+                color: '#78909C',
+          height: 1,
+          width: '100%',
+          offsetX: 0,
+          offsetY: 0
+            },
+           
+      crosshairs: {
+        show: false,  
+     },
+   
+          categories: ["Ja", "Fe", "Ma", "Ap", "Ma", "Ju", "Ji","Au","Se", "Oc", "No", "De"]
+        },
+        yaxis: {
+            categories: [0, 100, 200, 300, 400, 500]
+          },
+        tooltip: {
+            shared:false,
+            intersect: false,
+            custom: function({series, seriesIndex, dataPointIndex, w}) {
+                setVal(series[seriesIndex][dataPointIndex]);
+                return '<div class="arrow_box">' +
+                  '<span>' + series[seriesIndex][dataPointIndex] +' litre'+'<br>'+cost(series[seriesIndex][dataPointIndex])+currency +'</span>' +
+                  '</div>'
+              },
+              
+        }
+      }
+      
+     
     
-       
+    
         
     
-// }
-
-
+ //}
+function setVal(litre){
+    document.getElementById("litre").innerHTML=litre+' litre';
+document.getElementById("price").innerHTML=cost(litre)+currency;
+}
+function cost(litre){
+return litre*28;
+}
 function renderChart(data, labels) {
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
@@ -138,64 +248,64 @@ function renderChart(data, labels) {
 
 //////////////
 // <!DOCTYPE HTML>
-{/* <html>
-<head>
-  <script type="text/javascript">
-  window.onload = function () {
-    var t=15;
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-      title: {
-        text: "Monthly Downloads"
-      },
-      axisX:{
+//{ <html>
+//<head>
+ // <script type="text/javascript">
+//   window.onload = function () {
+//     var t=15;
+//     var chart = new CanvasJS.Chart("chartContainer",
+//     {
+//       title: {
+//         text: "Monthly Downloads"
+//       },
+//       axisX:{
        
-       gridThickness: 1,
-       tickLength: 1,
-        interval:1,
-        intervalType: "month",
-        valueFormatString:"MMM",
+//        gridThickness: 1,
+//        tickLength: 1,
+//         interval:1,
+//         intervalType: "month",
+//         valueFormatString:"MMM",
         
-      },
-       axisY:{
+//       },
+//        axisY:{
        
-       gridThickness: 1,
-       tickLength: 1,
-        interval:100,
-        intervalType: "number",
-       maximun:500,
+//        gridThickness: 1,
+//        tickLength: 1,
+//         interval:100,
+//         intervalType: "number",
+//        maximun:500,
         
-      },
-      toolTip:{   
-			content:` <span id="litre" >{y}</span> litre <br> ${t}$`      
-		},
-        data: [
-      {
-        type: "area",
-        dataPoints: [//array
+//       },
+//       toolTip:{   
+// 			content:` <span id="litre" >{y}</span> litre <br> ${t}$`      
+// 		},
+//         data: [
+//       {
+//         type: "area",
+//         dataPoints: [//array
 
-        { x: new Date(2012, 00, 1), y: 260 },
-        { x: new Date(2012, 01, 1), y: 380 },
-        { x: new Date(2012, 02, 1), y: 430 },
-        { x: new Date(2012, 03, 1), y: 290},
-        { x: new Date(2012, 04, 1), y: 410 },
-        { x: new Date(2012, 05, 1), y: 450 },
-        { x: new Date(2012, 06, 1), y: 86 },
-        { x: new Date(2012, 07, 1), y: 64 },
-        { x: new Date(2012, 08, 1), y: 53 },
-        { x: new Date(2012, 12, 1), y: 60 }
-        ]
-      }
-      ]
-    });
+//         { x: new Date(2012, 00, 1), y: 260 },
+//         { x: new Date(2012, 01, 1), y: 380 },
+//         { x: new Date(2012, 02, 1), y: 430 },
+//         { x: new Date(2012, 03, 1), y: 290},
+//         { x: new Date(2012, 04, 1), y: 410 },
+//         { x: new Date(2012, 05, 1), y: 450 },
+//         { x: new Date(2012, 06, 1), y: 86 },
+//         { x: new Date(2012, 07, 1), y: 64 },
+//         { x: new Date(2012, 08, 1), y: 53 },
+//         { x: new Date(2012, 12, 1), y: 60 }
+//         ]
+//       }
+//       ]
+//     });
 
-    chart.render();
-  }
-  </script>
-  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-</head>
-<body>
+//     chart.render();
+//   }
+  //</script>
+//   <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+//</head>
+{/* <body>
   <div id="chartContainer" style="height: 300px; width: 100%;">
   </div>
-</body>
-</html> */}
+</body> */}
+//</html> */}

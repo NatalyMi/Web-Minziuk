@@ -10,9 +10,9 @@ window.onload=function(){
     setTimeout(clock, 1000);
     
     $('.ui.dropdown').dropdown();
-    data = [0,54, 200, 300, 400, 500,77,5,4,265,5,85];
-    labels =  ["Ja", "Fe", "Ma", "Ap", "Ma", "Ju", "Ji","Au","Se", "Oc", "No", "De"];
-    renderChart(data, labels);
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+      
+      chart.render();
 
     $('#rG1').click(function(){
       
@@ -39,7 +39,7 @@ window.onload=function(){
       }
     });
   
-f();
+
 
 }
 
@@ -123,61 +123,4 @@ function getMONTHS(date) {
        month:'long'
     };
     return date.toLocaleString('eng', optionsDate);
-}
-function f(){
-var colors = JSC.getPalette('default'); 
-  
-var chart = JSC.chart('chartDiv', { 
-  debug: true, 
-  type: 'area', 
-  title_label_text: 
-    'Monthly <span style="color:' + 
-    colors[0] + 
-    '"><b>Purchases</b></span> vs. <span style="color:' + 
-    colors[1] + 
-    '"><b>Rent</b></span>', 
-  legend_visible: false, 
-  yAxis: { formatString: 'c' }, 
-  
-  xAxis: { 
-    crosshair_enabled: true, 
-    scale: { type: 'time' } 
-  }, 
-  
-  defaultSeries: { 
-    shape_opacity: 0.3, 
-    defaultPoint_marker: { 
-      fill: 'white', 
-      type: 'circle', 
-      outline: { width: 2 } 
-    } 
-  }, 
-  
-  series: [ 
-    { 
-      name: 'Purchases', 
-  
-      points: [ 
-        ['1/1/2020', 29.9], 
-        ['2/1/2020', 97.5], 
-        ['3/1/2020', 110.4], 
-        ['4/1/2020', 129.2], 
-        ['5/1/2020', 144.0], 
-        ['6/1/2020', 176.0] 
-      ] 
-    }, 
-    { 
-      name: 'Rent', 
-  
-      points: [ 
-        ['1/1/2020', 86.9], 
-        ['2/1/2020', 79.5], 
-        ['3/1/2020', 95.4], 
-        ['4/1/2020', 97.2], 
-        ['5/1/2020', 123.0], 
-        ['6/1/2020', 111.0] 
-      ] 
-    } 
-  ] 
-}); 
 }
