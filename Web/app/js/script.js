@@ -11,8 +11,9 @@ window.onload=function(){
     
     $('.ui.dropdown').dropdown();
     var chart = new ApexCharts(document.querySelector("#chart"), options);
-      
       chart.render();
+      var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
+      chart1.render();
 
     $('#rG1').click(function(){
       
@@ -40,7 +41,7 @@ window.onload=function(){
     });
   
 
-
+   
 }
 
 function clock()

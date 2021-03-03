@@ -39,6 +39,7 @@ var currency="$";
                 colors: '#9da8bc',
                
             },
+            inverseOrder: true,
             
           },
         dataLabels: {
