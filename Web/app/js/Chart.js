@@ -136,3 +136,66 @@ function renderChart(data, labels) {
    
 }
 
+//////////////
+// <!DOCTYPE HTML>
+{/* <html>
+<head>
+  <script type="text/javascript">
+  window.onload = function () {
+    var t=15;
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title: {
+        text: "Monthly Downloads"
+      },
+      axisX:{
+       
+       gridThickness: 1,
+       tickLength: 1,
+        interval:1,
+        intervalType: "month",
+        valueFormatString:"MMM",
+        
+      },
+       axisY:{
+       
+       gridThickness: 1,
+       tickLength: 1,
+        interval:100,
+        intervalType: "number",
+       maximun:500,
+        
+      },
+      toolTip:{   
+			content:` <span id="litre" >{y}</span> litre <br> ${t}$`      
+		},
+        data: [
+      {
+        type: "area",
+        dataPoints: [//array
+
+        { x: new Date(2012, 00, 1), y: 260 },
+        { x: new Date(2012, 01, 1), y: 380 },
+        { x: new Date(2012, 02, 1), y: 430 },
+        { x: new Date(2012, 03, 1), y: 290},
+        { x: new Date(2012, 04, 1), y: 410 },
+        { x: new Date(2012, 05, 1), y: 450 },
+        { x: new Date(2012, 06, 1), y: 86 },
+        { x: new Date(2012, 07, 1), y: 64 },
+        { x: new Date(2012, 08, 1), y: 53 },
+        { x: new Date(2012, 12, 1), y: 60 }
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+  <div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
+</body>
+</html> */}
