@@ -121,6 +121,9 @@ color: #53c6ea;
 .m-1{
 margin: 1rem !important;
 }
+.mt-1{
+    margin-top: 1rem;
+}
 .mr-1{
     margin-right: 1rem;
 }
@@ -188,6 +191,8 @@ margin: 1rem !important;
     width: 565px;
   }
 .item{
+    height: 40px;
+     width: 230px;
     .small{
         font : {
             family: 'Montserrat', sans-serif;
@@ -198,7 +203,7 @@ color: #b6bfce;
     }
     .msg{
         font : {
-            family: 'Montserrat', sans-serif;
+            // family: 'Montserrat', sans-serif;
             size: 14px;
             weight: bold;
         }
@@ -220,4 +225,34 @@ color: #78859a;
     }
     
   }
+  .tariffArrow{
+      color: #a9e2f4 !important;
+    transform: rotate(45deg) !important;
+    font-size: 10px !important;
+    margin-top: 7px;
+  }
+  .vr-left{
+    border-left: 1px solid rgb(212, 209, 209);
+    padding: 5px;
+  }
+  .vr-right{
+    border-right: 1px solid rgb(212, 209, 209);
+    padding: 5px;
   
+  }
+  .value{
+    font-size: 30px !important;
+    color: #78859a !important;
+    font-weight: bold !important;
+  }
+  .label{
+      span{
+        font-size: 17px;
+        color: #53c6ea;
+        font-weight: bold;
+      }
+  }
+  #dayLabel{
+     font-size:20px;
+     font-weight: bold;
+  }

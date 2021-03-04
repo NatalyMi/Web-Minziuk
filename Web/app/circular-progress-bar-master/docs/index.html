@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="global.css">
+    <title>circular progress bar</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <section>
+        <div class="pie" data-pie='{ "percent": 50, "colorSlice": "#E91E63" }'></div>
+        <div class="pie" data-pie='{ "percent": 60, "colorSlice": "#ffc107" }'></div>
+        <div class="pie" data-pie='{ "percent": 70, "colorSlice": "#00bcd4" }'></div>
+      </section>
+      <section>
+        <div class="pie"
+          data-pie='{ "lineargradient": ["yellow","#ff0000"], "round": true, "percent": 70, "colorSlice": "#4CAF50", "colorCircle": "#e6e6e6" }'>
+        </div>
+        <div class="pie"
+          data-pie='{ "lineargradient": ["#ff0000","#9c27b0"], "round": true, "percent": 80, "colorSlice": "#4CAF50", "colorCircle": "#e6e6e6" }'>
+        </div>
+        <div class="pie"
+          data-pie='{ "lineargradient": ["#ff0000","yellow"], "round": true, "percent": 90, "colorSlice": "#4CAF50", "colorCircle": "#e6e6e6" }'>
+        </div>
+      </section>
+      <section>
+        <div class="pie"
+          data-pie='{ "percent": 55, "colorSlice": "#CDDC39", "colorCircle": "#f1f1f1", "fontWeight": 100 }'>
+        </div>
+        <div class="pie"
+          data-pie='{ "percent": 75, "colorSlice": "#ffc107", "colorCircle": "#f1f1f1", "fontWeight": 100 }'>
+        </div>
+        <div class="pie"
+          data-pie='{ "percent": 85, "colorSlice": "#00bcd4", "colorCircle": "#f1f1f1", "fontWeight": 100 }'>
+        </div>
+      </section>
+      <section>
+        <div class="pie" data-pie='{ "percent": 60, "colorSlice": "#000", "colorCircle": "#e6e6e6", "number": false }'>
+        </div>
+        <div class="pie"
+          data-pie='{ "percent": 70, "colorSlice": "#ffc107", "colorCircle": "#e6e6e6", "number": false }'>
+        </div>
+        <div class="pie"
+          data-pie='{ "percent": 80, "colorSlice": "#00bcd4", "colorCircle": "#e6e6e6", "number": false }'>
+        </div>
+      </section>
+    </div>
+
+    <script type="text/javascript">
+      if (!('IntersectionObserver' in window)) {
+        var script = document.createElement("script");
+        script.src = "https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver";
+        document.getElementsByTagName('head')[0].appendChild(script);
+      }
+    </script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const circle = new CircularProgressBar('pie');
+
+        setInterval(() => {
+          const options = {
+            index: 1,
+            percent: Math.floor((Math.random() * 100) + 1)
+          }
+          circle.animationTo(options);
+        }, 2000);
+
+        setInterval(() => {
+          const options = {
+            index: 2,
+            percent: Math.floor((Math.random() * 100) + 1)
+          }
+          circle.animationTo(options);
+        }, 2000);
+
+        setInterval(() => {
+          const options = {
+            index: 3,
+            percent: Math.floor((Math.random() * 100) + 1)
+          }
+          circle.animationTo(options);
+        }, 2000);
+
+      });
+    </script>
+    <script src="presentation.js"></script>
+    <script src="circularProgressBar.min.js"></script>
+  </body>
+
+</html>

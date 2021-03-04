@@ -10,6 +10,7 @@ window.onload=function(){
     setTimeout(clock, 1000);
     
     $('.ui.dropdown').dropdown();
+    const circle = new CircularProgressBar('pie');
     var chart = new ApexCharts(document.querySelector("#chart"), options);
       chart.render();
       var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
