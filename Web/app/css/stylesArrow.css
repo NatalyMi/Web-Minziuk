@@ -1,0 +1,19 @@
+#insideArrow{
+	height: 50px;
+	width: 50px;
+	background-color: aqua;
+	border-radius: 0px 100px 100px 100px;
+	padding: 2px !important;
+    box-shadow: 3px 3px 30px 5px #adb4b4 !important;
+	text-align: center;
+	transform: rotate(-90deg);
+}
+#inText{
+	color: white;
+	position:absolute;
+	margin-left: -18px;
+	margin-top: 14px;
+	
+	font-weight: bold;
+	transform: rotate(-(90deg+167deg))  !important;
+}

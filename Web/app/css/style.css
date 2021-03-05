@@ -66,9 +66,9 @@ body {
 
 .titleSmall {
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  color: #53c6ea; }
+  color: #53c6ea;
+  margin-left: 5px; }
 
 .fRight {
   float: right; }
@@ -206,3 +206,7 @@ body {
 #dayLabel {
   font-size: 20px;
   font-weight: bold; }
+
+#balanceLabel {
+  top: 4rem;
+  position: absolute; }

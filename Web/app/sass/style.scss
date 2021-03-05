@@ -88,10 +88,11 @@ color: #53c6ea;
 .titleSmall{
     font: {
         size: 16px;
-        family: 'Montserrat', sans-serif;
+        // family: 'Montserrat', sans-serif;
         weight: bold;
     }
     color: #53c6ea;
+    margin-left:5px ;
 }
 
 .fRight{
@@ -256,3 +257,7 @@ color: #78859a;
      font-size:20px;
      font-weight: bold;
   }
+#balanceLabel{
+    top:4rem;
+    position: absolute;
+}
