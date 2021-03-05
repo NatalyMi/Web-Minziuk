@@ -2,7 +2,8 @@
 body{
     margin: 0% !important;
     padding: 0% !important;
-    background-color: #ebf6fa !important;
+    background-color: #fbfdfd !important;
+    
 }
 @mixin  grayText{
     font-family: 'Montserrat', sans-serif;
@@ -33,10 +34,12 @@ body{
 @media only screen and (min-width: 1200px)
 {
 .containert {
+    
    // width: calc(1127px + 2rem)!important;
    margin-left: 50px !important;
    margin-right:50px !important;
    margin-top:10px !important;
+   
 }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px)
@@ -46,7 +49,9 @@ body{
    margin-right:10px !important;
 }
 }
-
+.hadow{
+    box-shadow: 3px 3px 20px 1px  #d6f5fd !important;
+}
 .white{
     background-color: #ffffff;
     padding: 3px;
@@ -199,7 +204,7 @@ margin: 1rem !important;
      height: 211px; 
   }
 .itemBorder{
-    height: 40px;
+    height: 35px;
      width: 230px;
     .small{
         font : {

@@ -2,7 +2,7 @@
 body {
   margin: 0% !important;
   padding: 0% !important;
-  background-color: #ebf6fa !important; }
+  background-color: #fbfdfd !important; }
 
 .pageTop {
   font-family: 'Montserrat', sans-serif;
@@ -29,6 +29,9 @@ body {
   .containert {
     margin-left: 10px !important;
     margin-right: 10px !important; } }
+
+.hadow {
+  box-shadow: 3px 3px 20px 1px  #d6f5fd !important; }
 
 .white {
   background-color: #ffffff;
@@ -166,7 +169,7 @@ body {
   height: 211px; }
 
 .itemBorder {
-  height: 40px;
+  height: 35px;
   width: 230px; }
   .itemBorder .small {
     font-family: 'Montserrat', sans-serif;
