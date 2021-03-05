@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/stylesRangeslider.min.css" />
+
     <link  rel="stylesheet" href="css/stylesArrow.css">
     <link rel="stylesheet" href="css/circleProgress1.css" />
     <link rel="stylesheet" href="css/circleBalance.css" />
@@ -102,14 +104,14 @@
 
  <div class="containert pRelative" >
   <div class="container pRelative fLeft smContainer">
-    <span class="fLeft white-p" style="height: 211px; width: 270px;" >
+    <span class="fLeft white-p smBox"  >
       <div>
         <img src="img/Shape 14.png">
         <span class="titleSmall">Messages</span>
         <span><img class="fRight " src="img/Shape 6.png"></span>
       </div>
       <div class="ui relaxed items " >
-        <div class="item " >
+        <div class="item itemBorder" >
           
           <div class="middle aligned content ">
             <span class=" msg">Too cultivated use solicitude</span><br>
@@ -119,7 +121,7 @@
            <a> <i class="fas fa-arrow-right " ></i></a>
           </div>
         </div>
-        <div class="item ">
+        <div class="item itemBorder">
           
           <div class="middle aligned content">
             <span class="msg">Barton did feebly change man</span><br>
@@ -129,7 +131,7 @@
            <a> <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <div class="item ">
+        <div class="item itemBorder">
           
           <div class="middle aligned content">
             <span class="msg">Indulgence ten remarkably</span><br>
@@ -141,7 +143,7 @@
         </div>
       </div>
   </span>
-  <span class="fRight white-p">
+  <span class="fRight white-p smBox">
    
       <div>
         <img src="img/Shape 8.png">
@@ -150,7 +152,7 @@
         <p style="margin-top: 1rem;">Current Quarter (Dec-Mar)</p>
       </div>
      
-          <div style="margin-top: 1rem;">
+          <div style="margin-top: 1rem; height: 150px;">
             <div class="  fLeft vr-right">
             <div class=" statistic pRelative" style="height:40px;">
               <div class="value mt-1">
@@ -196,13 +198,14 @@
    
   </div> 
   <div class="container pRelative fRight smContainer" >
-    <span class="fLeft white-p">
+    <span class="fLeft white-p smBox">
       <div>
         <img src="img/Shape 23.png">
         <span class="titleSmall">Account</span>
         <span><img class="fRight " src="img/Shape 6.png"></span>
        
-      </div><span id="balanceLabel">Current<br>Balance</span>
+      </div>
+      <span id="balanceLabel">Current<br>Balance</span>
       
       <div class="progress-circle2 progressing p-30 " style="margin: 4.5rem; margin-bottom:15px ;margin-top: 3rem; position:relative">
         <div class="progress-circle-border2">
@@ -211,24 +214,57 @@
         <div class="progress-circle-content2">
             <div id="insideArrow">
 
-                <span id="inText">$120</span>
+                <span id="inText"></span>
                </div>
         
         </div>
       </div>
  
   </span>
-  <span class="fRight white-p">
-    <div class="progress-circle progressing p-3">
-      <div class="progress-circle-border">
-        <div class="left-half-circle"></div><div class="right-half-circle"></div>
-      </div>
-      <div class="progress-circle-content">
-        <div ><span id="dayLabel">10</span> <br> days</div>
+  <span class="fRight white-p smBox">
+    <div>
+      <img src="img/Shape 24.png">
+      <span class="titleSmall">Settings</span>
+      <span><img class="fRight " src="img/Shape 6.png"></span>
       
-      </div>
+     
     </div>
-  
+    <div class="ui two column grid p-0">
+      <div class="row h-30">
+        <div class="column">Screen brightness</div>
+        
+          <div class="column fRight">
+            <input id="slider1" type="range" min="0" max="100" value="50" step="1" >
+          </div>
+      
+       
+      </div>
+      <div class="row h-30">
+        <div class="column">Sound Volume</div>
+        <div class="column fRight">
+          <input id="slider2" type="range" min="0" max="100" value="50" step="1" >
+        </div>
+      </div>
+      <div class="row h-30">
+        <div class="column">Currency</div>
+        <div class="column fRight">
+          
+          <select name="gender" class="ui dropdown curencyDropdown dropCur fRight" id="select" >
+            <option value="£"  selected ='true'>Pounds</option>
+            <option value="$">Dollar</option>
+            <option value="€">Euro</option>
+          </select>
+        </div>
+      </div>
+      <div class="row h-30">
+        <div class="column">Weather</div>
+        <div class="column ">
+          <div class="ui toggle checkbox fRight">
+            <input type="checkbox" checked="checked" name="public">
+            <label></label>
+          </div>
+        </div>
+      </div>
   </span>
     
    
@@ -271,11 +307,15 @@
   </div>
 </div>  -->
       <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>   
-      <script src="semantic/dist/semantic.min.js"></script>
+     
        <script src="https://kit.fontawesome.com/ba3e669e60.js" crossorigin="anonymous"></script> 
-      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-      <script src="js/script.js"></script>
+     
+     
        <script src="js/Chart.js"></script> 
+       <script src="js/rangeslider-js.min.js"></script>
        <script src="circular-progress-bar-master/docs/circularProgressBar.min.js"></script>
+       <script src="js/script.js"></script>
+       <script src="semantic/dist/semantic.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </body>
 </html>

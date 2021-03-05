@@ -1,55 +1,73 @@
 window.onload=function(){
     navigator.geolocation.getCurrentPosition(function (position) {
-       
+
         var lat = position.coords.latitude.toString();
-      
+
         var lon = position.coords.longitude.toString();
         getWeather(lat, lon);
     });
-    
+
     setTimeout(clock, 1000);
-    
-    $('.ui.dropdown').dropdown();
+    var mySlider1 = document.getElementById('slider1');
+    rangesliderJs.create(mySlider1);
+
+    var mySlider2 = document.getElementById('slider2');
+    rangesliderJs.create(mySlider2);
+
     const circle = new CircularProgressBar('pie');
     var chart = new ApexCharts(document.querySelector("#chart"), options);
       chart.render();
       var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
       chart1.render();
-
-    $('#rG1').click(function(){
-      
-      if ($(this).attr( "checked" )){
+      $('.ui.dropdown').dropdown();
+      $('.dropCur').dropdown({
        
-        this.checked = false;
-
-        $(this).removeAttr('checked');
-      } else {
-        $(this).attr('checked', true)
-        this.checked = true;
-      }
-    });
-    $('#rB1').click(function(){
       
-      if ($(this).attr( "checked" )){
-       
-        this.checked = false;
+        onChange: function(value, text, $selectedItem) {
+          $('#inText').text(value+120);
+         
+           up(value);
+        },
+      });
+     up( $('.dropCur').dropdown('get value'));
+    // $('#rG1').click(function(){
 
-        $(this).removeAttr('checked');
-      } else {
-        $(this).attr('checked', true)
-        this.checked = true;
-      }
-    });
-  
+    //   if ($(this).attr( "checked" )){
 
-   
+    //     this.checked = false;
+
+    //     $(this).removeAttr('checked');
+    //   } else {
+    //     $(this).attr('checked', true)
+    //     this.checked = true;
+    //   }
+    // });
+    // $('#rB1').click(function(){
+
+    //   if ($(this).attr( "checked" )){
+
+    //     this.checked = false;
+
+    //     $(this).removeAttr('checked');
+    //   } else {
+    //     $(this).attr('checked', true)
+    //     this.checked = true;
+    //   }
+    // });
+
+    
+
 }
-
+function up(value){
+  $('#inText').text(value+120);
+  currentVal(value);
+ // chart.updateOptions({  });
+}
 function clock()
 {
     var date =new Date();
     $('#timeNow').append(`${date.getHours()}:${date.getMinutes()}`);
-    
+
 }
 
 function getWeather(lat, lon) {
@@ -67,13 +85,13 @@ function currentWeatherInformation(data) {
     let icon = data.weather[0].icon;
     var icon_url = "http://openweathermap.org/img/w/" + icon + ".png";
     let tempC = convertKelvinToCelsius(data.main.temp);
-   
-   
-   
-   
+
+
+
+
     $('#wicon').attr("src", icon_url);
     $('#tempNow').append(`${tempC}<sup>o</sup>C`);
-  
+
 
 }
 function convertKelvinToCelsius(value) {
@@ -91,7 +109,7 @@ function showTime(){
     var date = new Date();
     var h = date.getHours(); // 0 - 23
     var m = date.getMinutes(); // 0 - 59
-    var session = "AM"; 
+    var session = "AM";
     if(h == 0){
         h = 12;
     }
@@ -106,22 +124,22 @@ function showTime(){
     document.getElementById("day").innerHTML = `${getWeekDay(date).slice(0,3)} `;
     document.getElementById("month").innerHTML = `${getMONTHS(date).slice(0,3)} ${date.getDay()} `;
     setTimeout(showTime, 1000);
-    
+
 }
 
 showTime();
 function getWeekDay(date) {
-    
+
     optionsDate = {
-       
+
        weekday:'long'
     };
     return date.toLocaleString('eng', optionsDate);
 }
 function getMONTHS(date) {
-    
+
     optionsDate = {
-       
+
        month:'long'
     };
     return date.toLocaleString('eng', optionsDate);

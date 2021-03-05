@@ -90,6 +90,10 @@ body {
   border-radius: 10px;
   padding-bottom: 0; }
 
+.p-0 {
+  padding: 0;
+  width: 240px !important; }
+
 .m-1 {
   margin: 1rem !important; }
 
@@ -158,25 +162,28 @@ body {
 .smContainer {
   width: 565px; }
 
-.item {
+.smBox {
+  height: 211px; }
+
+.itemBorder {
   height: 40px;
   width: 230px; }
-  .item .small {
+  .itemBorder .small {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #b6bfce; }
-  .item .msg {
+  .itemBorder .msg {
     font-size: 14px;
     font-weight: bold;
     line-height: 16px;
     color: #78859a; }
-  .item i {
+  .itemBorder i {
     color: #cccccc !important;
     margin-top: 1rem !important; }
-  .item:hover {
+  .itemBorder:hover {
     padding: 2px !important;
     box-shadow: 5px 10px 8px 10px #e5f3f7 !important; }
-    .item:hover i {
+    .itemBorder:hover i {
       color: #53c6ea !important; }
 
 .tariffArrow {
@@ -210,3 +217,15 @@ body {
 #balanceLabel {
   top: 4rem;
   position: absolute; }
+
+.curencyDropdown {
+  border-radius: 45px !important;
+  min-width: 90px !important;
+  min-height: 20px !important;
+  padding: 5px !important;
+  border-color: #53c6ea !important; }
+  .curencyDropdown .dropdown.icon {
+    padding: 4px !important; }
+
+.h-30 {
+  height: 40px !important; }

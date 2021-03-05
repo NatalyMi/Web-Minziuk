@@ -119,6 +119,10 @@ color: #53c6ea;
     padding-bottom:0 ;
 }
 
+.p-0{
+    padding: 0;
+    width: 240px !important;
+}
 .m-1{
 margin: 1rem !important;
 }
@@ -191,7 +195,10 @@ margin: 1rem !important;
   .smContainer{
     width: 565px;
   }
-.item{
+  .smBox{
+     height: 211px; 
+  }
+.itemBorder{
     height: 40px;
      width: 230px;
     .small{
@@ -260,4 +267,17 @@ color: #78859a;
 #balanceLabel{
     top:4rem;
     position: absolute;
+}
+.curencyDropdown{
+   border-radius: 45px !important;
+    min-width:90px !important;
+    min-height: 20px !important;
+    padding: 5px !important;
+    border-color: #53c6ea !important;
+    .dropdown.icon{
+        padding: 4px !important;
+    }
+}
+.h-30{
+height: 40px !important;
 }
