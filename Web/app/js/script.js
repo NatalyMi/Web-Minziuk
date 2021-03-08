@@ -5,7 +5,7 @@ window.onload=function(){
         `js/Data.json`,
         function (data) {
           
-          tmp(data);
+          SetData(data);
         }
      );
       
@@ -52,7 +52,18 @@ window.onload=function(){
             
         },
       });
+     
+      $('.dropdownElectric').dropdown({
+       
+      
+        onChange: function(value, text, $selectedItem) {
+            periodUp2(value);
+            updateSerie2();
+            
+        },
+      });
       periodUp( $('.dropdownGas').dropdown('get value'));
+      periodUp2( $('.dropdownElectric').dropdown('get value'));
      up( $('.dropCur').dropdown('get value'));
     // $('#rG1').click(function(){
 
@@ -85,6 +96,10 @@ window.onload=function(){
 function periodUp(param) {
     $('#periodLabel').text(param);
     periodChange( param);
+}
+function periodUp2(param) {
+    $('#periodLabel2').text(param);
+    periodChange2( param);
 }
 function up(value){
   $('#inText').text(value+120);

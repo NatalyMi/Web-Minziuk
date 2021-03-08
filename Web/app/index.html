@@ -40,7 +40,7 @@
           <span><img class="fRight mr-1" src="img/Shape 6.png"></span>
           <select name="gender" class="ui dropdown curencyDropdown  fRight  rBlue-45 mr-1 dropdownGas" id="select" >
             <option value="monthly"  selected ='true'>monthly</option>
-            <option value="dayly">dayly</option>
+            <option value="daily">daily</option>
 
           </select>
           <!-- <div class="ui compact selection dropdown fRight  rBlue-45 mr-1">
@@ -84,21 +84,17 @@
     <span class="titleLarge"> Electric usage</span>
     <span><img class="fRight mr-1" src="img/Shape 6.png"></span>
 
-    <div class="ui compact selection dropdown fRight  rBlue-45 mr-1">
-      <i class="dropdown icon "></i>
-      <div class="text">Select</div>
-      <div class="menu ">
-        <div class="item">Today</div>
-        <div class="item">B</div>
-        <div class="item">C</div>
-      </div>
-    </div>
+    <select name="Electric" class="ui dropdown curencyDropdown  fRight  rBlue-45 mr-1 dropdownElectric" id="select" >
+      <option value="monthly"  selected ='true'>monthly</option>
+      <option value="daily">daily</option>
+
+    </select>
   </div>
 
 
   <div class="Gas  fInfo" >
-    <span class="mr-1 ml-2 fLeft pRelative"><img class="fLeft mr-1" src="img/Shape 7.png"><span class="mr-1">Monthly</span><span id="litre" >41.6 litre</span></span>
-    <span class="mr-1 ml-2 fRight pRelative"> <span><img class="fLeft mr-1" src="img/Shape 8.png"></span><span>Total</span><span id="price" class=" ml-1">111$</span></span>
+    <span class="mr-1 ml-2 fLeft pRelative"><img class="fLeft mr-1" src="img/Shape 7.png"><span class="mr-1" id="periodLabel2"></span><span id="kWh" ></span></span>
+    <span class="mr-1 ml-2 fRight pRelative"> <span><img class="fLeft mr-1" src="img/Shape 8.png"></span><span>Total</span><span id="price2" class=" ml-1"></span></span>
   </div>
   <div id="chart1" style="height: 365px; width: 540px;">
   </div>

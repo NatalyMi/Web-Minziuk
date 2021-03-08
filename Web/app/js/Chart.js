@@ -1,23 +1,29 @@
 var currency="$";
 var period;
+var period2;
 var chart;
+var chart1;
 var Data;
 function periodChange(per) {
   period=per;
+ 
+}
+function periodChange2(per) {
+  period2=per;
  
 }
 function currentVal(item){
     currency=item;
 }
 
-function tmp(data) {
+function SetData(data) {
  Data=data;
   Createcharts(data);
 }
 function updateSerie() {
   chart.updateOptions({
     xaxis: {
-      categories: category()
+      categories: category(period)
       
     },
   
@@ -27,17 +33,28 @@ function updateSerie() {
   },{
     data:  Target(Data)
   }])
-
-
+}
+function updateSerie2() {
+  chart1.updateOptions({
+    xaxis: {
+      categories: category(period2)
+      
+    },
+  
+  });
+  chart1.updateSeries([{
+    data:  Usage2(Data)
+  },{
+    data:  Target2(Data)
+  }])
 }
 
 function Createcharts(data) {
-  
-
- 
    chart = new ApexCharts(document.querySelector("#chart"), options = {
         
-        
+    
+      colors: ['#59c7e1', '#85dcc9'],
+    
     chart: {
         toolbar: {
             show: false,
@@ -121,7 +138,7 @@ function Createcharts(data) {
     show: false,  
  },
 
-      categories: category()
+      categories: category(period)
     },
     yaxis: {
         categories: [0, 100, 200, 300, 400, 500]
@@ -140,9 +157,8 @@ function Createcharts(data) {
   });
   chart.render(); 
   
-   var chart1 = new ApexCharts(document.querySelector("#chart1"), options={
-        
-        
+    chart1 = new ApexCharts(document.querySelector("#chart1"), options={
+      colors: ['#59c7e1', '#85dcc9'],
     chart: {
         toolbar: {
             show: false,
@@ -184,16 +200,16 @@ function Createcharts(data) {
     dataLabels: {
         enabled: false,
       },
-    series: [{
-      name: 'Current usage',
-      data: data.Current_usage_monthlyGas
-    },
-      {
-        name: 'Target amount',
-        data: data.Target_amount_monthlyGas
-      
-     
-    }],
+      series: [{
+        name: 'Current usage',
+        data: Usage2(data) 
+      },
+        {
+          name: 'Target amount',
+          data: Target2(data)
+        
+       
+      }],
     stroke: {
         curve: 'straight'
       },
@@ -226,7 +242,7 @@ function Createcharts(data) {
     show: false,  
  },
 
-      categories: category()
+      categories: category(period2)
     },
     yaxis: {
         categories: [0, 100, 200, 300, 400, 500]
@@ -235,7 +251,7 @@ function Createcharts(data) {
         shared:false,
         intersect: false,
         custom: function({series, seriesIndex, dataPointIndex, w}) {
-            setVal(series[seriesIndex][dataPointIndex]);
+           
             return '<div class="arrow_box">' +
               '<span>' + series[seriesIndex][dataPointIndex] +' litre'+'<br>'+cost(series[seriesIndex][dataPointIndex])+currency +'</span>' +
               '</div>'
@@ -248,18 +264,34 @@ function Createcharts(data) {
 function Usage(data) {
   if(period=='monthly')
  {  console.log(period);
-  setVal(data);
+  setVal(data.Current_usage_monthlyGas);
    return data.Current_usage_monthlyGas;
  
  }
   else
  {
   console.log(period);
+  setVal(data.Current_usage_daylyGas);
    return data.Current_usage_daylyGas;
  }
 }
-function category() {
-  if(period=='monthly')
+function Usage2(data) {
+  if(period2=='monthly')
+ {  console.log(period);
+  setVal2(data.Current_usage_monthlyElec);
+   return data.Current_usage_monthlyElec;
+ 
+ }
+  else
+ {
+  console.log(period);
+  setVal2(data.Current_usage_daylyElec);
+   return data.Current_usage_daylyElec;
+ }
+}
+
+function category(per) {
+  if(per=='monthly')
   return ["Ja", "Fe", "Ma", "Ap", "Ma", "Ju", "Ji","Au","Se", "Oc", "No", "De"];
   else
   return ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
@@ -270,13 +302,28 @@ function Target(data) {
   else
   return data.Target_amount_daylyGas;
 }
-
-function setVal(data){
+function Target2(data) {
+  if(period2=='monthly')
+  return data.Target_amount_monthlyElec;
+  else
+  return data.Target_amount_daylyElec;
+}
+function setVal2(data){
   var sum=0;
-  data.Current_usage_monthlyGas.forEach(element => {
+  data.forEach(element => {
     sum+=element;
   });
-    document.getElementById("litre").innerHTML=sum/12+' litre';
+    document.getElementById("kWh").innerHTML=Math.round(sum/12)+' kWh';
+   
+   
+document.getElementById("price2").innerHTML=cost(sum)+currency;
+}
+function setVal(data){
+  var sum=0;
+  data.forEach(element => {
+    sum+=element;
+  });
+    document.getElementById("litre").innerHTML=Math.round(sum/12)+' litre';
    
    
 document.getElementById("price").innerHTML=cost(sum)+currency;

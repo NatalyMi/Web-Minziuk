@@ -2,5 +2,9 @@
     "Current_usage_monthlyGas":[5,54, 200, 300, 400, 450,77,5,4,265,5,85],
     "Current_usage_daylyGas":[ 200, 300, 400, 450,77,5,4],
     "Target_amount_monthlyGas":[11, 32, 45, 32, 34, 52, 41,5,54, 200, 300, 400],
-    "Target_amount_daylyGas":[ 32, 45, 32, 34, 52, 41,5]
+    "Target_amount_daylyGas":[ 32, 45, 32, 34, 52, 41,5],
+    "Current_usage_monthlyElec":[5,54, 20, 30, 40, 45,77,5,4,265,5,85],
+    "Current_usage_daylyElec":[ 50, 30, 40, 40,7,5,4],
+    "Target_amount_monthlyElec":[11, 32, 40, 32, 34, 52, 41,5,54, 20, 30, 400],
+    "Target_amount_daylyElec":[ 32, 45, 32, 34, 5, 1,5]
     }
