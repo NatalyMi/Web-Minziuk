@@ -1,4 +1,6 @@
 var d;
+var lat;
+var lon;
 window.onload=function(){
    
     $.get(
@@ -12,9 +14,9 @@ window.onload=function(){
       
     navigator.geolocation.getCurrentPosition(function (position) {
 
-        var lat = position.coords.latitude.toString();
+         lat = position.coords.latitude.toString();
 
-        var lon = position.coords.longitude.toString();
+         lon = position.coords.longitude.toString();
         getWeather(lat, lon);
     });
 
@@ -65,18 +67,23 @@ window.onload=function(){
       periodUp( $('.dropdownGas').dropdown('get value'));
       periodUp2( $('.dropdownElectric').dropdown('get value'));
      up( $('.dropCur').dropdown('get value'));
-    // $('#rG1').click(function(){
+     
+    $('#weatherToggle').click(function(){
 
-    //   if ($(this).attr( "checked" )){
+      if ($(this).attr( "checked" )){
 
-    //     this.checked = false;
-
-    //     $(this).removeAttr('checked');
-    //   } else {
-    //     $(this).attr('checked', true)
-    //     this.checked = true;
-    //   }
-    // });
+        this.checked = false;
+        $('#wicon').removeAttr("src");
+        $('#wicon').hide(); 
+    $('#tempNow').text('');
+        $(this).removeAttr('checked');
+      } else {
+        $('#wicon').show(); 
+        getWeather(lat, lon);
+        $(this).attr('checked', true)
+        this.checked = true;
+      }
+    });
     // $('#rB1').click(function(){
 
     //   if ($(this).attr( "checked" )){
@@ -103,6 +110,9 @@ function periodUp2(param) {
 }
 function up(value){
   $('#inText').text(value+120);
+ 
+  $('#curQuareterLarge').text(value);
+  $('#curQuareterSmall').text(value);
   currentVal(value);
  // chart.updateOptions({  });
 }
