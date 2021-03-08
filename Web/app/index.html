@@ -14,7 +14,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"> -->
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <!-- <link rel="stylesheet/less" type="text/css" href="dist/components/dropdown.css"> -->
-   
+
 </head>
 <body>
       <div class="containert pageTop pRelative">
@@ -24,56 +24,61 @@
             <span id="day" ></span>
             <br>
             <span id="month" ></span>
-        </span>       
+        </span>
         <span  id="tempNow" class="fRight m-30"></span>
         <span  class="fRight">
           <img id="wicon"  src="" alt="Weather icon" >
-        </span>  
+        </span>
       </div>
-  
+
     <div class="containert pRelative " style="height: 420px;">
       <span class="fLeft white-p hadow">
-        <div class="Gas pRelative"> 
+        <div class="Gas pRelative">
 
           <img src="img/icon.png">
           <span class="titleLarge"> Gas usage</span>
           <span><img class="fRight mr-1" src="img/Shape 6.png"></span>
-          <div class="ui compact selection dropdown fRight  rBlue-45 mr-1">
-            <i class="dropdown icon "></i>
+          <select name="gender" class="ui dropdown curencyDropdown  fRight  rBlue-45 mr-1 dropdownGas" id="select" >
+            <option value="monthly"  selected ='true'>monthly</option>
+            <option value="dayly">dayly</option>
+
+          </select>
+          <!-- <div class="ui compact selection dropdown fRight  rBlue-45 mr-1">
+            <i class="dropdown icon " id="dropdownGas"></i>
             <div class="text">Select</div>
             <div class="menu ">
-              <div class="item">Today</div>
+              <div class="item">monthly</div>
               <div class="item">B</div>
               <div class="item">C</div>
             </div>
-          </div>
+          </div> -->
         </div>
-        <!-- <div class="Gas pRelative"> 
+        <!-- <div class="Gas pRelative">
       <span class="mr-1 ml-2">
           <label class="rad G">
             <input id="rG1" type="radio" name="frequency" checked="checked"   >
             <i></i>
-           </label>  
+           </label>
            Target amount
           </span>
 <span class="mr-1 ml-2">
            <label class="rad B">
             <input id="rB1" type="radio" name="frequency1" checked="checked"   >
             <i></i>
-           </label>  
+           </label>
       Target amount
     </span>
         </div> -->
 
-        <div class="Gas  fInfo" > 
-          <span class="mr-1 ml-2 fLeft pRelative"><img class="fLeft mr-1" src="img/Shape 7.png"><span class="mr-1">Monthly</span><span id="litre" >41.6 litre</span></span>
+        <div class="Gas  fInfo" >
+          <span class="mr-1 ml-2 fLeft pRelative"><img class="fLeft mr-1" src="img/Shape 7.png"><span class="mr-1" id="periodLabel"></span><span id="litre" >41.6 litre</span></span>
           <span class="mr-1 ml-2 fRight pRelative"> <span><img class="fLeft mr-1" src="img/Shape 8.png"></span><span>Total</span><span id="price" class=" ml-1">111$</span></span>
         </div>
         <div id="chart" style="height: 365px; width: 540px;">
         </div>
 </span>
 <span class="fRight white-p hadow">
-  <div class="Gas pRelative"> 
+  <div class="Gas pRelative">
 
     <img src="img/Vector Smart Object.png">
     <span class="titleLarge"> Electric usage</span>
@@ -89,18 +94,18 @@
       </div>
     </div>
   </div>
-  
 
-  <div class="Gas  fInfo" > 
+
+  <div class="Gas  fInfo" >
     <span class="mr-1 ml-2 fLeft pRelative"><img class="fLeft mr-1" src="img/Shape 7.png"><span class="mr-1">Monthly</span><span id="litre" >41.6 litre</span></span>
     <span class="mr-1 ml-2 fRight pRelative"> <span><img class="fLeft mr-1" src="img/Shape 8.png"></span><span>Total</span><span id="price" class=" ml-1">111$</span></span>
   </div>
   <div id="chart1" style="height: 365px; width: 540px;">
   </div>
 </span>
-      
-     
- </div> 
+
+
+ </div>
 
  <div class="containert pRelative " >
   <div class="container pRelative fLeft smContainer ">
@@ -112,7 +117,7 @@
       </div>
       <div class="ui relaxed items " >
         <div class="item itemBorder" >
-          
+
           <div class="middle aligned content ">
             <span class=" msg">Too cultivated use solicitude</span><br>
             <span class="small">March 5, 08.95 PM</span>
@@ -122,7 +127,7 @@
           </div>
         </div>
         <div class="item itemBorder">
-          
+
           <div class="middle aligned content">
             <span class="msg">Barton did feebly change man</span><br>
             <span class="small">March 4, 02.30 AM</span>
@@ -132,7 +137,7 @@
           </div>
         </div>
         <div class="item itemBorder">
-          
+
           <div class="middle aligned content">
             <span class="msg">Indulgence ten remarkably</span><br>
             <span class="small">March 2, 11.20 AM</span>
@@ -144,14 +149,14 @@
       </div>
   </span>
   <span class="fRight white-p smBox hadow">
-   
+
       <div>
         <img src="img/Shape 8.png">
         <span class="titleSmall">Tariff</span>
         <span><img class="fRight " src="img/Shape 6.png"></span>
         <p style="margin-top: 1rem;">Current Quarter (Dec-Mar)</p>
       </div>
-     
+
           <div style="margin-top: 1rem; height: 150px;">
             <div class="  fLeft vr-right">
             <div class=" statistic pRelative" style="height:40px;">
@@ -162,13 +167,13 @@
                 <i class="fas fa-arrow-up tariffArrow fLeft"></i>
                 <span class="fLeft ml-1 m-" >  Downloads</span>
               </div>
-              
+
             </div>
             <div class="pRelative mt-1" style="height:20px;"><span class="fLeft">start</span> <span class="fRight">end</span></div>
             <div class="ui tiny progress pRelative">
 
               <span class="bar"></span>
-             
+
             </div>
             </div>
           <div class="  fRight vr-left">
@@ -179,34 +184,34 @@
                 </div>
                 <div class="progress-circle-content">
                   <div ><span id="dayLabel">10</span> <br> days</div>
-                
+
                 </div>
               </div>
-             <span style="font-size: 12px;">Until End of March</span> 
+             <span style="font-size: 12px;">Until End of March</span>
             </span>
           </div>
           </div>
-         
-       
-         
-      
-    
-     
-  
+
+
+
+
+
+
+
   </span>
-    
-   
-  </div> 
+
+
+  </div>
   <div class="container pRelative fRight smContainer" >
     <span class="fLeft white-p smBox hadow">
       <div>
         <img src="img/Shape 23.png">
         <span class="titleSmall">Account</span>
         <span><img class="fRight " src="img/Shape 6.png"></span>
-       
+
       </div>
       <span id="balanceLabel">Current<br>Balance</span>
-      
+
       <div class="progress-circle2 progressing p-30 " style="margin: 4.5rem; margin-bottom:15px ;margin-top: 3rem; position:relative">
         <div class="progress-circle-border2">
           <div class="left-half-circle2"></div><div class="right-half-circle2"></div>
@@ -216,28 +221,28 @@
 
                 <span id="inText"></span>
                </div>
-        
+
         </div>
       </div>
- 
+
   </span>
   <span class="fRight white-p smBox hadow">
     <div>
       <img src="img/Shape 24.png">
       <span class="titleSmall">Settings</span>
       <span><img class="fRight " src="img/Shape 6.png"></span>
-      
-     
+
+
     </div>
     <div class="ui two column grid p-0">
       <div class="row h-30">
         <div class="column">Screen brightness</div>
-        
+
           <div class="column fRight">
             <input id="slider1" type="range" min="0" max="100" value="50" step="1" >
           </div>
-      
-       
+
+
       </div>
       <div class="row h-30">
         <div class="column">Sound Volume</div>
@@ -248,7 +253,7 @@
       <div class="row h-30">
         <div class="column">Currency</div>
         <div class="column fRight">
-          
+
           <select name="gender" class="ui dropdown curencyDropdown dropCur fRight" id="select" >
             <option value="£"  selected ='true'>Pounds</option>
             <option value="$">Dollar</option>
@@ -266,12 +271,12 @@
         </div>
       </div>
   </span>
-    
-   
-  </div> 
-  
- 
-</div> 
+
+
+  </div>
+
+
+</div>
 
  <!-- <div class="ui two column doubling stackable grid container">
   <div class="column m-3">
@@ -306,12 +311,12 @@
 
   </div>
 </div>  -->
-      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>   
-     
-       <script src="https://kit.fontawesome.com/ba3e669e60.js" crossorigin="anonymous"></script> 
-     
-     
-       <script src="js/Chart.js"></script> 
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+       <script src="https://kit.fontawesome.com/ba3e669e60.js" crossorigin="anonymous"></script>
+
+       <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+       <script src="js/Chart.js"></script>
        <script src="js/rangeslider-js.min.js"></script>
        <script src="circular-progress-bar-master/docs/circularProgressBar.min.js"></script>
        <script src="js/script.js"></script>

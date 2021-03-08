@@ -1,4 +1,15 @@
+var d;
 window.onload=function(){
+   
+    $.get(
+        `js/Data.json`,
+        function (data) {
+          
+          tmp(data);
+        }
+     );
+      
+      
     navigator.geolocation.getCurrentPosition(function (position) {
 
         var lat = position.coords.latitude.toString();
@@ -15,10 +26,13 @@ window.onload=function(){
     rangesliderJs.create(mySlider2);
 
     const circle = new CircularProgressBar('pie');
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-      chart.render();
-      var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
-      chart1.render();
+  //  Data();
+    
+    // var chart = new ApexCharts(document.querySelector("#chart"), options);
+    //   chart.render();
+    //   var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
+    //   chart1.render();
+      
       $('.ui.dropdown').dropdown();
       $('.dropCur').dropdown({
        
@@ -29,6 +43,16 @@ window.onload=function(){
            up(value);
         },
       });
+      $('.dropdownGas').dropdown({
+       
+      
+        onChange: function(value, text, $selectedItem) {
+            periodUp(value);
+            updateSerie();
+            
+        },
+      });
+      periodUp( $('.dropdownGas').dropdown('get value'));
      up( $('.dropCur').dropdown('get value'));
     // $('#rG1').click(function(){
 
@@ -57,6 +81,10 @@ window.onload=function(){
 
     
 
+}
+function periodUp(param) {
+    $('#periodLabel').text(param);
+    periodChange( param);
 }
 function up(value){
   $('#inText').text(value+120);

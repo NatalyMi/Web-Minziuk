@@ -1,0 +1,6 @@
+{
+    "Current_usage_monthlyGas":[5,54, 200, 300, 400, 450,77,5,4,265,5,85],
+    "Current_usage_daylyGas":[ 200, 300, 400, 450,77,5,4],
+    "Target_amount_monthlyGas":[11, 32, 45, 32, 34, 52, 41,5,54, 200, 300, 400],
+    "Target_amount_daylyGas":[ 32, 45, 32, 34, 52, 41,5]
+    }
