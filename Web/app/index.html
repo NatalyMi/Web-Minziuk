@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
     <!-- <link rel="stylesheet/less" type="text/css" href="dist/components/dropdown.css"> -->
 
 </head>
-<body>
+<body id="body_id">
       <div class="containert pageTop pRelative">
         <img id="shapeTop" src="img/Shape 1.png" class="fLeft">
         <span id="MyClockDisplay" class="clock fLeft m-30" onload="showTime()"  > </span>
@@ -150,7 +150,7 @@
         <img src="img/Shape 8.png">
         <span class="titleSmall">Tariff</span>
         <span><img class="fRight " src="img/Shape 6.png"></span>
-        <p style="margin-top: 1rem;">Current Quarter (Dec-Mar)</p>
+        <p  style="margin-top: 1rem;">Current Quarter <span id="currentQuarter"></span></p>
       </div>
 
           <div style="margin-top: 1rem; height: 150px;">
@@ -165,25 +165,25 @@
               </div>
 
             </div>
-            <div class="pRelative mt-1" style="height:20px;"><span class="fLeft">start</span> <span class="fRight">end</span></div>
-            <div class="ui tiny progress pRelative">
+            <div class="pRelative mt-1" style="height:20px;"><span class="fLeft" id="dayProgressStart">start</span> <span id="dayProgressEnd" class="fRight">end</span></div>
+            <div id="dayProgress" class="ui tiny progress pRelative " >
 
-              <span class="bar"></span>
+              <span class="bar" ></span>
 
             </div>
             </div>
           <div class="  fRight vr-left">
             <span class="fRight white-p">
-              <div class="progress-circle progressing p-3">
+              <div id="progressingDay" class="progress-circle progressing ">
                 <div class="progress-circle-border">
                   <div class="left-half-circle"></div><div class="right-half-circle"></div>
                 </div>
                 <div class="progress-circle-content">
-                  <div ><span id="dayLabel">10</span> <br> days</div>
+                  <div ><span id="dayLabel"></span> <br> days</div>
 
                 </div>
               </div>
-             <span style="font-size: 12px;">Until End of March</span>
+             <span style="font-size: 12px;">Until End of <span id="End_of"></span></span>
             </span>
           </div>
           </div>

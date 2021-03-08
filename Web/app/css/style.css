@@ -2,7 +2,12 @@
 body {
   margin: 0% !important;
   padding: 0% !important;
-  background-color: #fbfdfd !important; }
+  background-color: #fbfdfd !important;
+  width: max-content20px;
+  height: max-content; }
+
+html {
+  z-index: 20; }
 
 .pageTop {
   font-family: 'Montserrat', sans-serif;
@@ -232,3 +237,6 @@ body {
 
 .h-30 {
   height: 40px !important; }
+
+.bar {
+  background: #7cd8de !important; }

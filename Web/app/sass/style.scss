@@ -3,7 +3,14 @@ body{
     margin: 0% !important;
     padding: 0% !important;
     background-color: #fbfdfd !important;
+   width: max-content+20px;
+    height: max-content;
     
+   
+}
+
+html{
+    z-index: 20;
 }
 @mixin  grayText{
     font-family: 'Montserrat', sans-serif;
@@ -285,4 +292,7 @@ color: #78859a;
 }
 .h-30{
 height: 40px !important;
+}
+.bar{
+    background: #7cd8de !important;
 }

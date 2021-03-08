@@ -1,6 +1,7 @@
 var d;
 var lat;
 var lon;
+
 window.onload=function(){
    
     $.get(
@@ -21,19 +22,21 @@ window.onload=function(){
     });
 
     setTimeout(clock, 1000);
+    
     var mySlider1 = document.getElementById('slider1');
+    mySlider1.addEventListener('input', (ev) => {
+        
+    document.getElementById("body_id").style.filter = `brightness(${ev.target.value}%)`;
+ 
+    console.log( ev.target.value);
+      })
     rangesliderJs.create(mySlider1);
 
     var mySlider2 = document.getElementById('slider2');
     rangesliderJs.create(mySlider2);
 
     const circle = new CircularProgressBar('pie');
-  //  Data();
-    
-    // var chart = new ApexCharts(document.querySelector("#chart"), options);
-    //   chart.render();
-    //   var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
-    //   chart1.render();
+  
       
       $('.ui.dropdown').dropdown();
       $('.dropCur').dropdown({
@@ -84,21 +87,67 @@ window.onload=function(){
         this.checked = true;
       }
     });
-    // $('#rB1').click(function(){
-
-    //   if ($(this).attr( "checked" )){
-
-    //     this.checked = false;
-
-    //     $(this).removeAttr('checked');
-    //   } else {
-    //     $(this).attr('checked', true)
-    //     this.checked = true;
-    //   }
-    // });
+    forTariff();
 
     
 
+}
+// document.getElementById("body_id").onclick=function () {
+//     $("#body_id").style.filter = `brightness(${1}%)`;
+//     console.log(1);
+// }
+function  forTariff() {
+    var today= new Date();
+    if (today.getMonth()>=0&&today.getMonth()<=2)  {
+        $('#currentQuarter').text('(Jan-Mar)');
+        $('#End_of').text('March');
+        const start=new Date(`01/01/${today.getFullYear()}`);
+        const end = new Date(`03/31/${today.getFullYear()}`);
+        dayProgressStart(start,end,today);
+        $("#dayProgressStart").text('Jan 1');
+        $("#dayProgressEnd").text('Mar 31');
+    } else  if (today.getMonth()>=3&&today.getMonth()<=5)
+    {
+        $('#currentQuarter').text('(Apr-Jun)');
+        $('#End_of').text('June');
+       
+        const start=new Date(`04/01/${today.getFullYear()}`);
+        const end = new Date(`06/30/${today.getFullYear()}`);
+        dayProgressStart(start,end,today);
+        $("#dayProgressStart").text('Apr 1');
+        $("#dayProgressEnd").text('Jun 31');
+    }else  if (today.getMonth()>=6&&today.getMonth()<=9)
+    {
+        $('#currentQuarter').text('(Jul-Sep)');
+        $('#End_of').text('September');
+      
+        const start=new Date(`07/01/${today.getFullYear()}`);
+        const end = new Date(`09/30/${today.getFullYear()}`);
+        dayProgressStart(start,end,today);
+        $("#dayProgressStart").text('Jul 1');
+        $("#dayProgressEnd").text('Sep 31');
+    }else{
+        $('#currentQuarter').text('(Oct-Dec)');
+        $('#End_of').text('December');
+      
+        const start=new Date(`10/01/${today.getFullYear()}`);
+        const end = new Date(`12/31/${today.getFullYear()}`);
+        dayProgressStart(start,end,today);
+        $("#dayProgressStart").text('Oct 1');
+        $("#dayProgressEnd").text('Dec 31');
+    }
+}
+function   dayProgressStart(start,end,today) {
+    const diffTimeAll = Math.abs(end - start);
+    const diffDaysAll = Math.ceil(diffTimeAll / (1000 * 60 * 60 * 24));
+    const diffTime = Math.abs(end - today);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    var percent=Math.round((diffDaysAll-diffDays)*100/diffDaysAll);
+    $('#dayProgress').progress({
+        percent: percent
+      });
+    $('#progressingDay').addClass(`p-${percent}`); 
+    $('#dayLabel').text(diffDays);
 }
 function periodUp(param) {
     $('#periodLabel').text(param);
@@ -114,7 +163,7 @@ function up(value){
   $('#curQuareterLarge').text(value);
   $('#curQuareterSmall').text(value);
   currentVal(value);
- // chart.updateOptions({  });
+ 
 }
 function clock()
 {
