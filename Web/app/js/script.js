@@ -27,6 +27,7 @@ window.onload=function(){
     mySlider1.addEventListener('input', (ev) => {
         
     document.getElementById("body_id").style.filter = `brightness(${ev.target.value}%)`;
+     document.getElementById("body_id").style.backdropFilter = `brightness(${ev.target.value}%)`;
  
     console.log( ev.target.value);
       })

@@ -4,13 +4,18 @@ body{
     padding: 0% !important;
     background-color: #fbfdfd !important;
    width: max-content+20px;
-    height: max-content;
-    
-   
+   z-index: 60;
+  
+  height: 800px !important;
+   filter:brightness(50%);
+   backdrop-filter: brightness(50%);
+    touch-action: none;
 }
 
+
 html{
-    z-index: 20;
+  
+    touch-action: none;
 }
 @mixin  grayText{
     font-family: 'Montserrat', sans-serif;
