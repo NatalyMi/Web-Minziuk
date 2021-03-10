@@ -93,10 +93,7 @@ window.onload=function(){
     
 
 }
-// document.getElementById("body_id").onclick=function () {
-//     $("#body_id").style.filter = `brightness(${1}%)`;
-//     console.log(1);
-// }
+
 function  forTariff() {
     var today= new Date();
     if (today.getMonth()>=0&&today.getMonth()<=2)  {
@@ -225,7 +222,7 @@ function showTime(){
     var time = h + ":" + m ;
     document.getElementById("MyClockDisplay").innerHTML = `${time} <sup style="font-size:18px ; top:-40px;">${session}</sup>`;
     document.getElementById("day").innerHTML = `${getWeekDay(date).slice(0,3)} `;
-    document.getElementById("month").innerHTML = `${getMONTHS(date).slice(0,3)} ${date.getDay()} `;
+    document.getElementById("month").innerHTML = `${getMONTHS(date).slice(0,3)} ${date.getUTCDate()} `;
     setTimeout(showTime, 1000);
 
 }

@@ -3,20 +3,14 @@ body{
     margin: 0% !important;
     padding: 0% !important;
     background-color: #fbfdfd !important;
-   width: max-content+20px;
-   z-index: 60;
-  
-  height: 800px !important;
-   filter:brightness(50%);
-   backdrop-filter: brightness(50%);
+   width: max-content+20px !important;
+   
     touch-action: none;
+    overflow-x: scroll !important;
 }
 
 
-html{
-  
-    touch-action: none;
-}
+
 @mixin  grayText{
     font-family: 'Montserrat', sans-serif;
     color: #b6bfce;
@@ -33,9 +27,22 @@ html{
     }
 
 }
-@media only screen and (min-width: 992px) and (max-width: 1199px)
-{
+@media only screen  and (min-width: 601px)  and (max-width: 1199px)
+{.item {
+    
+   
+    flex-direction:row !important;
+}
+    body{
+        height: 1500px !important;
+    }
+.Block{
+   
+    float: left!important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
+}
 .containert{
    
    margin-left: 20px !important;
@@ -43,8 +50,14 @@ html{
    margin-top:10px !important;
 }
 }
-@media only screen and (min-width: 1200px)
-{
+@media only screen and (min-width: 1245px)
+{ 
+    body{
+    height: 800px !important;
+}
+    .Block{
+        float: right!important;
+    }
 .containert {
     
    // width: calc(1127px + 2rem)!important;
@@ -54,11 +67,22 @@ html{
    
 }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px)
-{.containert {
+
+@media only screen  and (max-width: 600px)
+{.Block{
+    float: right!important;
+    margin-left: -5px !important;
+}
+    body{
+        height: 1450px !important;
+        width: 600px !important;
+    }
+    .containert {
    // width: calc(723px + 2rem)!important;
    margin-left: 10px !important;
    margin-right:10px !important;
+   padding: 0;
+   
 }
 }
 .hadow{
@@ -214,6 +238,7 @@ margin: 1rem !important;
   }
   .smBox{
      height: 211px; 
+     width: 280px;
   }
 .itemBorder{
     height: 35px;

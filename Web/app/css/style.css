@@ -3,15 +3,9 @@ body {
   margin: 0% !important;
   padding: 0% !important;
   background-color: #fbfdfd !important;
-  width: max-content20px;
-  z-index: 60;
-  height: 800px !important;
-  filter: brightness(50%);
-  backdrop-filter: brightness(50%);
-  touch-action: none; }
-
-html {
-  touch-action: none; }
+  width: max-content20px !important;
+  touch-action: none;
+  overflow-x: scroll !important; }
 
 .pageTop {
   font-family: 'Montserrat', sans-serif;
@@ -22,22 +16,41 @@ html {
   font-size: 60px;
   font-weight: bold; }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (min-width: 601px) and (max-width: 1199px) {
+  .item {
+    flex-direction: row !important; }
+  body {
+    height: 1500px !important; }
+  .Block {
+    float: left !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
   .containert {
     margin-left: 20px !important;
     margin-right: 20px !important;
     margin-top: 10px !important; } }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1245px) {
+  body {
+    height: 800px !important; }
+  .Block {
+    float: right !important; }
   .containert {
     margin-left: 50px !important;
     margin-right: 50px !important;
     margin-top: 10px !important; } }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 600px) {
+  .Block {
+    float: right !important;
+    margin-left: -5px !important; }
+  body {
+    height: 1450px !important;
+    width: 600px !important; }
   .containert {
     margin-left: 10px !important;
-    margin-right: 10px !important; } }
+    margin-right: 10px !important;
+    padding: 0; } }
 
 .hadow {
   box-shadow: 3px 3px 20px 1px  #d6f5fd !important; }
@@ -175,7 +188,8 @@ html {
   width: 565px; }
 
 .smBox {
-  height: 211px; }
+  height: 211px;
+  width: 280px; }
 
 .itemBorder {
   height: 35px;
