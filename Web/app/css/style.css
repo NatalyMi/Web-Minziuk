@@ -3,7 +3,6 @@ body {
   margin: 0% !important;
   padding: 0% !important;
   background-color: #fbfdfd !important;
-  width: max-content20px !important;
   touch-action: none;
   overflow-x: scroll !important; }
 
@@ -16,7 +15,7 @@ body {
   font-size: 60px;
   font-weight: bold; }
 
-@media only screen and (min-width: 601px) and (max-width: 1199px) {
+@media only screen and (min-width: 601px) and (max-width: 1244px) {
   .item {
     flex-direction: row !important; }
   body {
@@ -41,16 +40,17 @@ body {
     margin-top: 10px !important; } }
 
 @media only screen and (max-width: 600px) {
+  .item {
+    flex-direction: row !important; }
   .Block {
-    float: right !important;
-    margin-left: -5px !important; }
+    float: right !important; }
   body {
     height: 1450px !important;
     width: 600px !important; }
   .containert {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-    padding: 0; } }
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-top: 10px !important; } }
 
 .hadow {
   box-shadow: 3px 3px 20px 1px  #d6f5fd !important; }
