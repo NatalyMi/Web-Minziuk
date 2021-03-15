@@ -14,6 +14,11 @@ function periodChange2(per) {
 }
 function currentVal(item){
     currency=item;
+   if(Data!=null)
+   {
+     Usage(Data);
+    Usage2(Data);
+   }
 }
 
 function SetData(data) {

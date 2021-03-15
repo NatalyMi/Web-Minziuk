@@ -36,19 +36,11 @@ window.onload=function(){
     var mySlider2 = document.getElementById('slider2');
     rangesliderJs.create(mySlider2);
 
-    const circle = new CircularProgressBar('pie');
+  
   
       
       $('.ui.dropdown').dropdown();
-      $('.dropCur').dropdown({
-       
-      
-        onChange: function(value, text, $selectedItem) {
-          $('#inText').text(value+120);
-         
-           up(value);
-        },
-      });
+    
       $('.dropdownGas').dropdown({
        
       
@@ -88,10 +80,20 @@ window.onload=function(){
         this.checked = true;
       }
     });
+    const circle = new CircularProgressBar('pie');
     forTariff();
+    $('.dropCur').dropdown({
+       
+      
+        onChange: function(value, text, $selectedItem) {
+          $('#inText').text(value+120);
+         
+           up(value);
+        },
+      });
 
     
-
+    
 }
 
 function  forTariff() {
