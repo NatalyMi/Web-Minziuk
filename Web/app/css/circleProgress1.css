@@ -49,7 +49,7 @@
 
 	.progress-circle .progress-circle-border .left-half-circle,
 	    .progress-circle .progress-circle-border .right-half-circle {
-		border: 5px solid #33f;
+		border: 5px solid#61cce1;
 		border-radius: 50%;
 		clip: rect(0, 0.5em, 1em, 0);
 		height: 67px;
